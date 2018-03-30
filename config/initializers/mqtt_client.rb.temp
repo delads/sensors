@@ -4,7 +4,7 @@ require 'net/https'
 require 'uri'
 
 
-# @sensors = Sensor.all
+ @sensors = Sensor.all
   
 @sensors.each do |s|
   
