@@ -1,0 +1,29 @@
+<div class="container">
+<%= render 'shared/errors', obj: @sensor %>
+
+<div class="row">
+  
+  
+  <div class="well col-md-4 col-md-offset-4">
+    <%= form_for(@sensor, html: { multipart: true }) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :interval %>
+      <%= f.text_field :interval %>
+      
+      <%= f.label :namespace %>
+      <%= f.text_field :namespace %>
+      
+      <%= f.label :mqtt_user %>
+      <%= f.text_field :mqtt_user %>
+      
+      <%= f.label :mqtt_password %>
+      <%= f.text_field :mqtt_password %>
+      
+     
+      <%= f.submit(@sensor.new_record? ? 'Create Sensor' : 'Edit Sensor', class: "btn btn-success") %>
+    <% end %>
+  </div>
+</div>
+</div>

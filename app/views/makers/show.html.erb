@@ -1,0 +1,57 @@
+<div class="container white_pane">
+  
+    <div class="row">
+  
+      <div class="col-md-6 product_header">
+
+       <!--  <%= link_to gravatar_for(@maker, size:75), maker_path(@maker) %> -->
+        &nbsp;&nbsp;
+        <%= @maker.makername %>
+     </div>
+    </div>
+  <br>
+  
+  
+  <ul class="nav nav-tabs">
+    <li class='active'>
+      <%= link_to "Things", maker_path(@maker) %>
+    </li>
+    <% if logged_in? and @maker == current_user %>
+    <li>
+      <%= link_to "Your Profile", edit_maker_path(@maker) %>
+    </li>
+    <% end %>
+  </ul>
+
+    <% if logged_in? and @maker == current_user %>
+      <%= link_to new_sensor_path do %>
+       <%= image_tag "", class: "col-md-3 merchant_gallery" %>
+      <% end %>
+    <% end %>
+    
+
+
+    <% @sensors.each do |sensor| %>
+        
+          <div class="col-md-3">
+              <div class="thermometer_dashboard"><%= sensor.property_value  %> &degC</div>
+          </div> 
+    
+    <% end %>
+    
+    
+     <div class="col-sm-6">
+     <!-- START widget-->
+            <div class="panel widget">
+               <div class="panel-body bg-primary text-center">
+                  <div class="text-lg m0">12&deg;</div>
+                  <p>Bariloche</p>
+                  <div class="mb-lg"></div>
+                  <em class="fa fa-sun-o"></em>
+               </div>
+            </div>
+            <!-- END widget-->
+      </div>
+
+  
+</div>

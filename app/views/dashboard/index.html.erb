@@ -1,0 +1,47 @@
+<div class="content-heading">
+   <!-- START Language list-->
+   <div class="pull-right">
+      <div class="btn-group">
+         <button type="button" data-toggle="dropdown" class="btn btn-default">English</button>
+         <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInUpShort">
+            <li><a href="#" data-set-lang="en">English</a>
+            </li>
+            <li><a href="#" data-set-lang="es">Spanish</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <!-- END Language list    -->
+   Dashboard
+   <small data-localize="dashboard.WELCOME"></small>
+</div>
+
+<% @sensors.each do |sensor| %>
+
+<div class="col-lg-3 col-md-6">
+      <!-- START panel-->
+      <div class="panel panel-light">
+            <div class="panel-heading">
+            <div class="row">
+                  <div class="col-xs-3">
+                  <%= link_to "", {controller: "sensors", action: "index"}, class: @sensor_class[sensor.sensor_type] %>
+                  </div>
+                  <div class="col-xs-9 text-right">
+
+                  <div class="text-lg"><%= sensor.property_value %> <%=raw @sensor_measure[sensor.sensor_type] %></div>
+                  <p class="m0"><%= sensor.name %> </p>
+                  </div>
+            </div>
+            </div>
+            <a href="/charts" class="panel-footer bg-gray-light bt0 clearfix btn-block">
+            <span class="pull-left">View Details</span>
+            <span class="pull-right">
+                  <em class="fa fa-bar-chart"></em>
+            </span>
+            </a>
+            <!-- END panel-->
+      </div>
+</div>
+<% end %>
+
+

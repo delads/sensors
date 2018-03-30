@@ -1,0 +1,43 @@
+<!-- START Sidebar (left)-->
+<div class="aside-inner">
+   <nav class="sidebar">
+      <!-- START sidebar nav-->
+      <ul class="nav">
+         <li class="nav-heading">
+            <span>Main Navigation</span>
+         </li>
+         <li class="<%= 'active' if controller?('dashboard') && action?('index') %>">
+            <a href="/dashboard" title="Dashboard">
+               <em class="icon-speedometer"></em>
+               <span>Dashboard</span>
+            </a>
+         </li>
+         <li class="<%= 'active' if controller?('map') && action?('index') %>">
+            <a href="/map" title="Map">
+               <em class="icon-globe"></em>
+               <span>Map</span>
+            </a>
+         </li>
+          <li class="<%= 'active' if controller?('sensors') && action?('new') %>">
+            <a href="/sensors/new" title="Add new things">
+               <em class="icon-plus"></em>
+               <span>Add new things</span>
+            </a>
+         </li>
+         <li class="<%= 'active' if controller?('triggers') && action?('index') %>">
+            <a href="/triggers" title="Triggers">
+               <em class="icon-bell"></em>
+               <span>Triggers</span>
+            </a>
+         </li>
+         <li class="<%= 'active' if controller?('makers') && action?('index') %>">
+            <a href="/makers" title="Maker">
+               <em class="icon-settings"></em>
+               <span>Settings</span>
+            </a>
+         </li>
+      </ul>
+      <!-- END sidebar nav-->
+   </nav>
+</div>
+<!-- END Sidebar (left)-->

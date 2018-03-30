@@ -1,0 +1,41 @@
+<h3>Charts</h3>
+<div class="container-fluid container-md">
+   <div class="row mb-lg">
+      <div class="col-lg-10 offset-lg-1">
+         <h3 class="mb-lg pv">Kitchen Temperature</h3>
+         <canvas id="myChart"></canvas>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var lineData = {
+
+        labels: [<% @timestamps.each do |time| %>'<%= time.strftime("%a - %H:%M") %>',<% end %> ],
+            datasets: [{
+                label: 'Temperature',
+                backgroundColor: 'rgba(114,102,186,0.2)',
+                borderColor: 'rgba(114,102,186,1)',
+                pointBorderColor: '#fff',
+                pointRadius: 0,
+                data: [<% @values.each do |value| %><%= value %>,<% end %> ]}]
+        };
+
+        
+
+
+
+
+        var lineOptions = {
+            legend: {
+                display: true
+            }
+        };
+        var linectx = document.getElementById('myChart').getContext('2d');
+        var lineChart = new Chart(ctx, {
+            data: lineData,
+            type: 'line',
+            options: lineOptions
+        });
+</script>
+      </div>
+   </div>
+</div>

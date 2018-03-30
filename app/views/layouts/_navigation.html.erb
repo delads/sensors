@@ -1,0 +1,31 @@
+<header class="navbar navbar-fixed-top navbar-default">
+  
+  <div class="container">
+    <%= link_to "Things", root_path, class: "btn btn-lg btn-primary", id: "logo" %>
+
+    <div class="pull-right">
+        
+        <% if logged_in? %>
+        
+          <div class="nav_item">
+          <%= link_to '', maker_path(current_user), class: "glyphicon glyphicon-cog" %>
+          </div>
+           <div class="nav_item">
+          <%= link_to '', root_path, class: "glyphicon glyphicon-home" %>
+          </div> 
+           <div class="nav_item">
+          <%= link_to "Sign out", logout_path, class: "btn btn-default"%>
+          </div>
+        
+        <% else %>
+          <div class="nav_item">
+            <%= link_to "Connect some Things", register_path, class: "sell_some_things" %>
+          </div>
+          <div class="nav_item">
+            <%= link_to "Sign in", login_path, class: "btn btn-default"%>
+          </div>
+        <% end %>
+        
+    </div> <!-- End pull-right  -->
+  </div> <!-- End container -->
+</header>

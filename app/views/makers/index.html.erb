@@ -1,0 +1,35 @@
+<div class="container">
+  
+  
+
+ 
+    <% @makers.each do |maker| %>
+      
+      <div class="well row">
+    
+      <div class="h4" ><%= maker.makername %></div>
+      <div class="h5" ><%= maker.email %></div>
+      
+      <div class="col-sm-1 text-left pull-left">
+                  <%= link_to "",  maker, class: "glyphicon glyphicon-trash", method: :delete,data: { confirm: "You sure?" } %>
+      </div>
+    
+      <br>
+      <% maker.sensors.each do |sensor| %>
+        <div class="col-md-3">
+          <div class="h5" ><%= sensor.name %></div>
+          <div class="h6">Namespace: <%= sensor.namespace %></div>
+          <div class="thermostat_gallery">&nbsp<%= sensor.max_temperature  %>
+              <br>
+              <font size="2"><%= sensor.property_value %></font>
+          </div>
+        </div>
+        
+      <% end %>
+      
+      
+      </div>
+    <% end %>
+
+  
+</div>  
