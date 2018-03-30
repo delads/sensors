@@ -1,0 +1,187 @@
+/* ========================================================================
+   Component: layout
+ ========================================================================== */
+/* line 56, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+body,
+.wrapper > section {
+  background-color: #f5f7fa;
+}
+
+/* line 60, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.wrapper > .aside {
+  background-color: #fff;
+}
+
+/* ========================================================================
+   Component: top-navbar
+ ========================================================================== */
+/* line 71, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar {
+  background-color: #fff;
+}
+/* line 73, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-header {
+  background-color: transparent;
+  background-image: -webkit-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+  background-image: -o-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+  background-image: linear-gradient(to right, #f05050 0%, #f47f7f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF05050', endColorstr='#FFF47F7F', GradientType=1);
+}
+@media only screen and (min-width: 768px) {
+  /* line 73, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar .navbar-header {
+    background-image: none;
+  }
+}
+/* line 80, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-nav > li > .navbar-text {
+  color: #f05050;
+}
+/* line 83, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-nav > li > a,
+.topnavbar .navbar-nav > .open > a {
+  color: #f05050;
+}
+/* line 86, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-nav > li > a:hover, .topnavbar .navbar-nav > li > a:focus,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > .open > a:focus {
+  color: #c91111;
+}
+/* line 94, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-nav > .active > a, .topnavbar .navbar-nav > .active > a:hover, .topnavbar .navbar-nav > .active > a:focus,
+.topnavbar .navbar-nav > .open > a,
+.topnavbar .navbar-nav > .open > a:hover,
+.topnavbar .navbar-nav > .open > a:focus {
+  background-color: transparent;
+}
+/* line 100, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .navbar-nav > li > [data-toggle='navbar-search'] {
+  color: #fff;
+}
+/* line 104, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.topnavbar .nav-wrapper {
+  background-color: #f05050;
+  background-image: -webkit-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+  background-image: -o-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+  background-image: linear-gradient(to right, #f05050 0%, #f47f7f 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF05050', endColorstr='#FFF47F7F', GradientType=1);
+}
+
+@media only screen and (min-width: 768px) {
+  /* line 116, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar {
+    background-color: #f05050;
+    background-image: -webkit-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+    background-image: -o-linear-gradient(left, #f05050 0%, #f47f7f 100%);
+    background-image: linear-gradient(to right, #f05050 0%, #f47f7f 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF05050', endColorstr='#FFF47F7F', GradientType=1);
+  }
+  /* line 121, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar .navbar-nav > .open > a, .topnavbar .navbar-nav > .open > a:hover, .topnavbar .navbar-nav > .open > a:focus {
+    box-shadow: 0 -3px 0 rgba(255, 255, 255, 0.5) inset;
+  }
+  /* line 125, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar .navbar-nav > li > .navbar-text {
+    color: #fff;
+  }
+  /* line 128, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar .navbar-nav > li > a,
+  .topnavbar .navbar-nav > .open > a {
+    color: #fff;
+  }
+  /* line 131, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+  .topnavbar .navbar-nav > li > a:hover, .topnavbar .navbar-nav > li > a:focus,
+  .topnavbar .navbar-nav > .open > a:hover,
+  .topnavbar .navbar-nav > .open > a:focus {
+    color: #c91111;
+  }
+}
+/* ========================================================================
+   Component: sidebar
+ ========================================================================== */
+/* line 144, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar {
+  background-color: #fff;
+}
+/* line 147, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav-heading {
+  color: #919DA8;
+}
+/* line 154, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li > a,
+.sidebar .nav > li > .nav-item {
+  color: #515253;
+}
+/* line 157, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li > a:focus, .sidebar .nav > li > a:hover,
+.sidebar .nav > li > .nav-item:focus,
+.sidebar .nav > li > .nav-item:hover {
+  color: #f05050;
+}
+/* line 161, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li > a > em,
+.sidebar .nav > li > .nav-item > em {
+  color: inherits;
+}
+/* line 169, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li.active,
+.sidebar .nav > li.active > a,
+.sidebar .nav > li.active .nav, .sidebar .nav > li.open,
+.sidebar .nav > li.open > a,
+.sidebar .nav > li.open .nav {
+  background-color: #fcfcfc;
+  color: #f05050;
+}
+/* line 175, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li.active > a > em, .sidebar .nav > li.open > a > em {
+  color: #f05050;
+}
+/* line 179, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar .nav > li.active {
+  border-left-color: #f05050;
+}
+
+/* line 186, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav {
+  background-color: #fff;
+}
+/* line 188, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav > .sidebar-subnav-header {
+  color: #515253;
+}
+/* line 192, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav > li > a,
+.sidebar-subnav > li > .nav-item {
+  color: #515253;
+}
+/* line 195, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav > li > a:focus, .sidebar-subnav > li > a:hover,
+.sidebar-subnav > li > .nav-item:focus,
+.sidebar-subnav > li > .nav-item:hover {
+  color: #f05050;
+}
+/* line 201, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav > li.active > a,
+.sidebar-subnav > li.active > .nav-item {
+  color: #f05050;
+}
+/* line 204, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.sidebar-subnav > li.active > a:after,
+.sidebar-subnav > li.active > .nav-item:after {
+  border-color: #f05050;
+  background-color: #f05050;
+}
+
+/* ========================================================================
+   Component: offsidebar
+ ========================================================================== */
+/* line 218, /Users/don/dev/delads/things/app/assets/stylesheets/angle/themes/theme-d.scss */
+.offsidebar {
+  border-left: 1px solid greyscale(#cccccc);
+  background-color: #fff;
+  color: #515253;
+}
