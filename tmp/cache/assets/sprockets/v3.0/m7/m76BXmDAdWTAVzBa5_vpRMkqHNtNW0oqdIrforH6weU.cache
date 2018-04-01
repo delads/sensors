@@ -1,0 +1,12 @@
+{:uriI"}file://app/assets/i18n/site-es.json?type=application/json&id=b0b872efe7ad760cc3bf61236fbb0e65eeb703cfdcebe92ade24b25b316b31a2:ET:load_pathI"app/assets/i18n;T:filenameI"!app/assets/i18n/site-es.json;T:	nameI"site-es;T:logical_pathI"site-es.json;T:content_typeI"application/json;T:sourceI"B{
+  "dashboard": {
+    "WELCOME": "Bienvenido a Angle"
+  }
+}
+;T:metadata{	:dependencieso:Set:
+@hash}
+I"environment-version;TTI"environment-paths;TTI"rails-env;TTI"@processors:type=application/json&file_type=application/json;TTI"/file-digest://app/assets/i18n/site-es.json;TTF:charsetI"
+utf-8;F:digest"%
+ìï*2é1’¸H‡LK{µÛñÃÊ[zÁ$ÁÓt9h7ß:lengthiB:dependencies_digest"%.tšı/]
+ósØpÆ`a[bbyÕG`ãAIúN:idI"Eb0b872efe7ad760cc3bf61236fbb0e65eeb703cfdcebe92ade24b25b316b31a2;F:
+mtimel+œJªZ
