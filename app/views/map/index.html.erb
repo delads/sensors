@@ -1,52 +1,58 @@
-<h3>Google Maps
-   <small>Easy usage directly from data attribute</small>
-</h3>
-<div class="row">
-   <div class="col-md-6">
-      <div class="panel panel-default">
-         <div class="panel-heading">Classic Map</div>
-         <div class="panel-body">
-            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" class="gmap"></div>
-         </div>
-      </div>
-   </div>
-   <div class="col-md-6">
-      <div class="panel panel-default">
-         <div class="panel-heading">Custom zoom</div>
-         <div class="panel-body">
-            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-zoom="19" class="gmap"></div>
-         </div>
-      </div>
-   </div>
-</div>
-<div class="row">
-   <div class="col-md-6">
-      <div class="panel panel-default">
-         <div class="panel-heading">Different Map Type</div>
-         <div class="panel-body">
-            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-maptype="SATELLITE" class="gmap"></div>
-         </div>
-      </div>
-   </div>
-   <div class="col-md-6">
-      <div class="panel panel-default">
-         <div class="panel-heading">Multiple Addresses</div>
-         <div class="panel-body">
-            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867; 376 N TUSTIN ST, ORANGE, CA 92867" data-title="Location 1; Location 2" class="gmap"></div>
-         </div>
-      </div>
-   </div>
-</div>
-<div class="row">
-   <div class="col-md-12">
-      <div class="panel panel-default">
-         <div class="panel-heading">Styled Maps</div>
-         <div class="panel-body">
-            <div data-gmap="" data-address="276 N TUSTIN ST, ORANGE, CA 92867" data-maptype="ROADMAP" data-styled="data-styled" class="gmap"></div>
-         </div>
-      </div>
-   </div>
-</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHgCyXOs3odEVeKkTz92qEOwxHgTm5xQE&callback=initMap"></script>
 
-<!-- GOOGLE MAPS-->
-<%= javascript_include_tag "//maps.google.com/maps/api/js?sensor=false" %>
+
+<div id="map" class="map-format"></div>
+    <script>
+        var myLatlng = new google.maps.LatLng(53.192821,-6.1714228);
+        var mapOptions = {
+        zoom: 13,
+        center: myLatlng,
+        mapTypeId: 'terrain'
+        }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var image = '/assets/wireless-signal.png';
+        var contentString = 
+            ' <div class="col-lg-3 col-md-6">' +
+                ' <!-- START panel-->' +
+                ' <div class="panel panel-light map-info-panel">' +
+                    ' <div class="panel-heading">' +
+                        ' <div class="row">' +
+                            ' <div class="col-xs-3">' +
+                                ' <%= link_to "", {controller: "sensors", action: "index"}, class: @sensor_class[@sensor.sensor_type] %>' +
+                            ' </div>' +
+                            ' <div class="col-xs-9 text-right">' +
+                                ' <div class="text-lg"><%= @sensor.property_value %> <%=raw @sensor_measure[@sensor.sensor_type] %></div>' +
+                                ' <p class="m0"><%= @sensor.name %> </p>' +
+                            ' </div>' +
+                        ' </div>' +
+                        ' <!-- END row -->' +
+                    ' </div>' +
+                    ' <!-- END panel-heading -->' +
+                    ' <a href="/charts" class="panel-footer bg-gray-light bt0 clearfix btn-block">' +
+                        ' <span class="pull-left">View Details</span>' +
+                        ' <span class="pull-right">' +
+                            ' <em class="fa fa-bar-chart"></em>' +
+                        ' </span>' +
+                    ' </a>' +
+                ' </div>' +
+                ' <!-- END panel-light-->' +
+            ' </div>' +
+            ' <!-- END bootstrap class -->';
+
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title:"Kitchen Temperature",
+            icon: image
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });
+
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+    </script>
