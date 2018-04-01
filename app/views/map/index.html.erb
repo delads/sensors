@@ -1,4 +1,4 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHgCyXOs3odEVeKkTz92qEOwxHgTm5xQE&callback=initMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHgCyXOs3odEVeKkTz92qEOwxHgTm5xQE"></script>
 
 
 <div id="map" class="map-format"></div>
@@ -10,7 +10,7 @@
         mapTypeId: 'terrain'
         }
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-        var image = '/assets/wireless-signal.png';
+        var image = "<%= image_path('wireless-signal.png') %>"
         var contentString = 
             ' <div class="col-lg-3 col-md-6">' +
                 ' <!-- START panel-->' +
