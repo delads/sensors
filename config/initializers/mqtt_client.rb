@@ -31,11 +31,11 @@ require 'uri'
           
           if(topic == mqtt_topic)
 
-            t = Time.now.utc
-            rounded = Time.at((t.to_time.to_i / 60.0).round * 60)
+            time = Time.now.rfc2822
+          #  rounded = Time.at((t.to_time.to_i / 60.0).round * 60)
 
             s.update_attribute(:property_value, message) 
-            TimeSeries.create(:sensor_id => s.id, :property_value => message, :time => rounded);
+            TimeSeries.create(:sensor_id => s.id, :property_value => message, :time => time);
  
           end
         end

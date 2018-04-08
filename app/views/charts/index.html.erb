@@ -12,7 +12,7 @@ var ctx = document.getElementById("myChart").getContext('2d');
 
 
 var io_data = [<% @timeseries.each do |sensor_reading| %><%= sensor_reading.property_value %>,<% end %> ];
-var formatted_dates = [<% @timeseries.each do |sensor_reading| %>"<%= sensor_reading.time %>",<% end %> ];
+var formatted_dates = [<% @timeseries.each do |sensor_reading| %>"<%= sensor_reading.time.rfc2822 %>",<% end %> ];
 var colors = ['#5ba2df', '#e2ac00', '#59b110'];
 
 var data = {
@@ -85,51 +85,6 @@ var data = {
             responsive: true,
             options: options
         });
-
-
-
-
-
-
-
-
-
-/*
-var lineData = {
-
-        labels: [<% @timestamps.each do |time| %>'<%= time.strftime("%a - %H:%M") %>',<% end %> ],
-            datasets: [{
-                label: 'Temperature',
-                backgroundColor: 'rgba(114,102,186,0.2)',
-                borderColor: 'rgba(114,102,186,1)',
-                pointBorderColor: '#fff',
-                pointRadius: 0,
-                data: [<% @values.each do |value| %><%= value %>,<% end %> ]}]
-        };
-
-        
-
-
-
-
-        var lineOptions = {
-            legend: {
-                display: true
-            },
-            elements: {
-            line: {
-                tension: 1, // disables bezier curves
-            }
-        }
-        };
-        var linectx = document.getElementById('myChart').getContext('2d');
-        var lineChart = new Chart(ctx, {
-            data: lineData,
-            type: 'line',
-            options: lineOptions
-        });
-
-        */
 
 </script>
       </div>
