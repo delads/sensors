@@ -14,6 +14,7 @@ class ChartsController < ApplicationController
    $num = 1440   # number of minutes in 24 hours
    minute_interval = 5
 
+
    t = t - ($num * 60)  # let's start at the earliest time. *60 for seconds
 
    while $i < $num  do
@@ -25,6 +26,8 @@ class ChartsController < ApplicationController
 
     $i += minute_interval
    end
+
+   @timeseries = TimeSeries.all
 
 
   end

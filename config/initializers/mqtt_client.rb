@@ -11,9 +11,11 @@ require 'uri'
   Thread.new do 
 
     namespace = s.namespace
-    mqtt_token = s.mqtt_token
-    mqtt_topic = s.mqtt_topic
+   # mqtt_token = s.mqtt_token
+   # mqtt_topic = s.mqtt_topic
 
+   mqtt_token = "mqtt://delads:dd31d3fbed2942fa8e8d7eb6ac6d6eee@io.adafruit.com"
+   mqtt_topic = "delads/feeds/temperature"
 
   
     
