@@ -23,9 +23,10 @@
       <div class="panel panel-light">
             <div class="panel-heading">
             <div class="row">
-                  <div class="col-xs-3">
-                  <%= link_to "", {controller: "charts", action: "index"}, class: @sensor_class[sensor.sensor_type] %>
+                  <a href="/charts/<%= sensor.id %>">
+                  <div class="col-xs-3 <%= @sensor_class[sensor.sensor_type] %>">
                   </div>
+                  </a>
                   <div class="col-xs-9 text-right">
 
                   <div class="text-lg"><%= sensor.property_value %> <%=raw @sensor_measure[sensor.sensor_type] %></div>
@@ -33,12 +34,17 @@
                   </div>
             </div>
             </div>
-            <a href="/charts" class="panel-footer bg-gray-light bt0 clearfix btn-block">
-            <span class="pull-left">View Details</span>
-            <span class="pull-right">
-                  <em class="fa fa-bar-chart"></em>
-            </span>
-            </a>
+            
+            <div class="panel-footer bg-gray-light bt0 clearfix btn-block">
+                  <div class="pull-left">
+                        <%= link_to "Edit Sensor", sensor %>
+                        </div>
+                  <a href="/charts/<%= sensor.id %>">
+                  <span class="pull-right">
+                        <em class="fa fa-bar-chart"></em>
+                  </span>
+                  </a>
+            </div>
             <!-- END panel-->
       </div>
 </div>
