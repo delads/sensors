@@ -9,10 +9,7 @@ require 'uri'
 @sensors.each do |s|
   
   Thread.new do 
-
-    begin
-
-      namespace = s.namespace
+    #  namespace = s.namespace
       mqtt_token = s.mqtt_token
       mqtt_topic = s.mqtt_topic
 
@@ -34,20 +31,18 @@ require 'uri'
             if(topic == mqtt_topic)
 
               time = Time.now.rfc2822
-            #  rounded = Time.at((t.to_time.to_i / 60.0).round * 60)
+              #rounded = Time.at((t.to_time.to_i / 60.0).round * 60)
 
-              s.update_attribute(:property_value, message) 
-              TimeSeries.create(:sensor_id => s.id, :property_value => message, :time => time);
+              begin
+                s.update_attribute(:property_value, message) 
+                TimeSeries.create(:sensor_id => s.id, :property_value => message, :time => time);
+              ensure
+                ActiveRecord::Base.connection_pool.release_connection
+              end # end begin
   
-            end
-          end
-      end
-
-    ensure
-      ActiveRecord::Base.connection_pool.release_connection
-    end # end begin
-
-
+            end  # enf id
+          end # end do
+      end # end do
   end  # end thread
 
   

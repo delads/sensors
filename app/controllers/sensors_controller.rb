@@ -48,21 +48,9 @@ before_action :build_sensor_map
 
     
     def update
-        if @sensor.update(sensor_params)
-          
-          
-      
-          user = @sensor.mqtt_user
-          password = @sensor.mqtt_password
-          target_temp = @sensor.max_temperature
-      
-          client = MQTT::Client.connect('mqtt://' + user + ':' + password + '@broker.shiftr.io')
-          client.publish("max_temp",target_temp,true)
-          client.disconnect()
-          
-          
-          flash[:success] = "Your thermmostat was updated successfully!"
-          redirect_to  sensor_path(@sensor)
+        if @sensor.update(sensor_params)       
+          flash[:success] = "Your sensor was updated successfully!"
+          redirect_to root_path
         else
           render :edit
         end
