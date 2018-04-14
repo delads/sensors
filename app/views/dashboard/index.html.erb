@@ -37,7 +37,7 @@
             
             <div class="panel-footer bg-gray-light bt0 clearfix btn-block">
                   <div class="pull-left">
-                        <%= link_to "Edit Sensor", sensor %>
+                        <a href="/sensors/<%=raw sensor.id %>/edit"> Edit Sensor</a>
                         </div>
                   <a href="/charts/<%= sensor.id %>">
                   <span class="pull-right">

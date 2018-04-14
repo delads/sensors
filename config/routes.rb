@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   root :to => redirect('/dashboard')
   
   # view routes
-
   resources :sensors
   resources :makers, except: [:new] 
   resources :map

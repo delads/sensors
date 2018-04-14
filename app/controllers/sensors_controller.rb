@@ -1,6 +1,6 @@
 class SensorsController < ApplicationController
-before_action :set_sensor, only: [:edit, :update, :show, :like, :destroy]
-before_action :require_same_user, only: [:edit, :update]
+before_action :set_sensor, only: [ :update, :show, :like, :destroy]
+before_action :require_same_user, only: [ :update]
 before_action :set_maker, only: [:show, :destroy]
 before_action :build_sensor_map
 
@@ -25,6 +25,11 @@ before_action :build_sensor_map
     
     def new
         @sensor = Sensor.new   
+    end
+
+    def edit
+      @sensor = Sensor.find(params[:id])
+      puts "At least it's calling edit"
     end
     
     def create
@@ -88,8 +93,8 @@ before_action :build_sensor_map
     
     def require_same_user
       if current_user != @sensor.maker
-        flash[:danger] = "You can only edit your own products"
-        redirect_to sensors_path
+        flash[:danger] = "You can only edit your own sensors"
+        redirect_to dashboard_path
       end
     end
 
