@@ -56,6 +56,7 @@ before_action :build_sensor_map
         end
     
     end
+
     
     def destroy
         Sensor.find(params[:id]).destroy
