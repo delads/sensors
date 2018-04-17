@@ -7,21 +7,19 @@ require 'uri'
  @sensors = Sensor.all
   
 @sensors.each do |s|
+
+  #  namespace = s.namespace
+  mqtt_token = s.mqtt_token
+  mqtt_topic = s.mqtt_topic
+  sensor_id = s.id
+  sensor_name = s.name
   
   Thread.new do 
 
     begin
-    #  namespace = s.namespace
-      mqtt_token = s.mqtt_token
-      mqtt_topic = s.mqtt_topic
-      sensor_id = s.id
-      sensor_name = s.name
-
     # mqtt_token = "mqtt://delads:dd31d3fbed2942fa8e8d7eb6ac6d6eee@io.adafruit.com"
     # mqtt_topic = "delads/feeds/temperature"
 
-    
-      
       MQTT::Client.connect(mqtt_token) do |c|
           
           c.subscribe(mqtt_topic)       
