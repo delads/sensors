@@ -55,6 +55,10 @@ require 'uri'
           end # end do
       end # end do
 
+    rescue => e
+      puts "Exception Message: #{ e.message }"
+      puts "Exception Backtrace: #{ e.backtrace }"
+
     ensure
       ActiveRecord::Base.connection_pool.release_connection
     end # end begin
