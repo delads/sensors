@@ -79,11 +79,16 @@
                 </div>
 
               <div class="form-group">
-                <div class="col-lg-offset-2 col-lg-10">
+                <div class="col-lg-offset-2 col-lg-5">
                   <%= s.submit(@sensor.new_record? ? 'Create Sensor' : 'Edit Sensor', class: "btn btn-sm btn-default") %>
                 </div>
+                
               </div>
             <% end %>  <!-- end of form>  -->
+            <div class="col-sm-1 text-left pull-left">
+                  <%= link_to 'Destroy', "/sensors/#{@sensor.id}/destroy" %>
+                </div>
+
           </div> <!-- end of <div class="form-horizontal"> -->
     </div>  <!-- end of <div class="panel-body"> -->
     </div>  <!-- end of <div class="panel panel-default"> -->

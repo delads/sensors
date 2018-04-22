@@ -61,7 +61,7 @@ before_action :build_sensor_map
     def destroy
         Sensor.find(params[:id]).destroy
         flash[:success] = "Sensor deleted"
-        redirect_to sensors_path
+        redirect_to root_path
     end
     
     

@@ -21,7 +21,9 @@ class ApisController < ApplicationController
   def createtimeseries
     sensor_id = params[:sensor_id]
     property_value = params[:property_value]
-    time = Time.now.rfc2822
+
+    # Hardcoding to Dublintime (UTC+1)
+    time = Time.now.localtime("+01:00").rfc2822
     
     TimeSeries.create(:sensor_id => sensor_id, :property_value => property_value, :time => time);
     render json: TimeSeries.last

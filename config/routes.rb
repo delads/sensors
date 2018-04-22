@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/logout', to: "logins#destroy"
 
   get '/register', to: 'makers#new'
-  
+
   
   # api routes
   get '/api/i18n/:locale' => 'api#i18n'
