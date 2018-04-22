@@ -2,10 +2,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-<div class="container-fluid container-md">
-   <div class="row mb-lg">
-      <div class="col-lg-10 offset-lg-1">
-         <h3 class="mb-lg pv"><%= @sensor.name %></h3>
+<div >
+   <div class="row">
+      <div style="position: relative; height:80vh; width:80vw">
+         <h3><%= @sensor.name %></h3>
          <canvas id="myChart"></canvas>
          
 
@@ -58,6 +58,7 @@ var data = {
           intersect: false
         },
          responsive: true,
+         maintainAspectRatio: false,
         tooltips: {
           enabled: true,
           mode: 'index',
